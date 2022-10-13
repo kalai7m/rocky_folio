@@ -1,9 +1,13 @@
+import React from 'react';
+import Carousel from './components/Carousel';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="text-4xl font-bold">
-      hello
-    </div>
+    <React.Fragment>
+      <Navbar />
+      <Carousel />
+    </React.Fragment>
   );
 }
 
