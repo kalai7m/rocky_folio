@@ -33,12 +33,12 @@ const Carousel = () => {
             <img
               src={Profile}
               alt="Rocky's Profile"
-              className="h-60 sm:h-72 relative z-10"
+              className="h-60 shadow-lg shadow-neutral-500 sm:h-72 relative z-10"
             />
             <img
               src={Rect}
               alt="Profile Background"
-              className="h-72 absolute top-[-20px] left-[20px] z-0"
+              className="h-72 absolute top-[-40px] sm:top-[-20px] left-[20px] z-0"
             />
             {/* background */}
             <img
@@ -60,7 +60,7 @@ const Carousel = () => {
           <img
             src={Poly2}
             alt="bgPoly-2"
-            className="h-64 absolute left-[0px] top-[370px] sm:top-[30%] z-0"
+            className="h-64 absolute left-[0px] top-[370px] sm:top-[20%] z-0"
           />
         </div>
       </div>
