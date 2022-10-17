@@ -34,7 +34,7 @@ const Navbar = () => {
         <div>
           <Logo className="h-12 sm:h-16" />
         </div>
-        <div className="lg:hidden" onClick={() => setShowOverlay(true)}>
+        <div className="lg:hidden" onClick={() => {setShowOverlay(true); document.body.style.overflow = 'hidden';}}>
           <Bars height={25} />
         </div>
         {/* OVERLAY */}
@@ -44,7 +44,7 @@ const Navbar = () => {
               <div>
                 <Logo className="h-12 sm:h-16" />
               </div>
-              <div className="lg:hidden" onClick={() => setShowOverlay(false)}>
+              <div className="lg:hidden" onClick={() => {setShowOverlay(false); document.body.style.overflow = 'unset';}}>
                 <Bars height={25} />
               </div>
             </div>
