@@ -9,22 +9,29 @@ import Media from "./micro/media";
 
 const Carousel = () => {
   return (
-    <div className="bg-darkBlack py-10 sm:pt-16 sm:pb-6 overflow-x-hidden relative" id="carousel">
+    <div
+      className="bg-darkBlack py-10 sm:pt-16 sm:pb-6 overflow-hidden relative"
+      id="carousel"
+    >
       <div className="md:max-w-[1240px] mx-auto flex items-center sm:py-10 flex-col-reverse sm:flex-row">
         {/* intro */}
         <div className="text-white sm:w-1/2 pl-10 pr-10 sm:pr-0 3xl:pl-0">
-          <p className="font-semibold text-xl sm:text-2xl tracking-wide">Hello I'M a</p>
+          <p className="font-semibold text-xl sm:text-2xl tracking-wide">
+            Hello I'M a
+          </p>
           <h1 className="text-4xl sm:text-5xl font-bold py-5 tracking-wider">
             <span>UI & UX </span>
             <span className="text-grassGreen-300">Designer.</span>
           </h1>
           <p className="text-md sm:text-lg">
             Hi, I'm Bharath Rocky, a passionate UI/UX Designer based in India
-            with over 2 years of experience in crafting digital products and
-            helping businesses and non-profits expand their capacity for impact.
+            with over 2 years of experience in creating bold & brave interface
+            design for companies all across the world.
+            {/*crafting digital products and
+            helping businesses and non-profits expand their capacity for impact. */}
           </p>
           <div className="mt-6">
-            <Media/>
+            <Media />
           </div>
         </div>
         {/* image */}
