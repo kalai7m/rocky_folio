@@ -9,10 +9,10 @@ import Media from "./micro/media";
 
 const Carousel = () => {
   return (
-    <div className="bg-darkBlack py-10 sm:py-16 overflow-x-hidden relative" id="carousel">
+    <div className="bg-darkBlack py-10 sm:pt-16 sm:pb-6 overflow-x-hidden relative" id="carousel">
       <div className="md:max-w-[1240px] mx-auto flex items-center sm:py-10 flex-col-reverse sm:flex-row">
         {/* intro */}
-        <div className="text-white sm:w-1/2 pl-10 pr-10 sm:pr-0 2xl:pl-0">
+        <div className="text-white sm:w-1/2 pl-10 pr-10 sm:pr-0 3xl:pl-0">
           <p className="font-semibold text-xl sm:text-2xl tracking-wide">Hello I'M a</p>
           <h1 className="text-4xl sm:text-5xl font-bold py-5 tracking-wider">
             <span>UI & UX </span>

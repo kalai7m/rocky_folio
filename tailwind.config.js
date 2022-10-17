@@ -8,8 +8,9 @@ module.exports = {
       'lg': '892px',
       'xl': '1024px',
       '2xl': '1200px',
-      '3xl': '1440px',
-      '4xl': '1532px',
+      '3xl': '1300px',
+      '4xl': '1440px',
+      '5xl': '1532px',
     },
     extend: {
       colors: {
