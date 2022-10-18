@@ -4,6 +4,7 @@ import Carousel from './components/Carousel';
 import Navbar from './components/Navbar';
 import { MetricBox } from './components/MetricBox';
 import { Services } from './components/Services';
+import { Projects } from './components/Projects';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <About />
       <MetricBox />
       <Services />
+      <Projects />
     </React.Fragment>
   );
 }
