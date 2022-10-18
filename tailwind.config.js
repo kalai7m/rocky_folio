@@ -13,12 +13,14 @@ module.exports = {
       '5xl': '1532px',
     },
     extend: {
+      backgroundOpacity: ['active'],
       colors: {
         'darkBlack': '#081219',
         'grassGreen' : {
           100: '#1CC98A',
           200: '#0F855B',
           300: '#2BDA80',
+          400: '#058F5D',
         },
       },
       backgroundImage: {
