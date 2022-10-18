@@ -17,7 +17,7 @@ export const Projects = () => {
     },
   ];
   return (
-    <section id="projects" className="py-14 bg-darkBlack">
+    <section id="projects" className="pt-8 pb-14 bg-darkBlack">
       <SectionHeading
         heading={"Projects"}
         subHeading={"WORKS THAT I HAVE DONE"} cls={"pb-4"}

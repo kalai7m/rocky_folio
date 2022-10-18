@@ -31,7 +31,7 @@ export const Services = () => {
       <div className="md:max-w-[1240px] 2xl:mx-auto grid grid-rows-3 md:grid-cols-2 md:grid-rows-1 2xl:grid-cols-3 gap-0 md:gap-8 relative mx-6">
         {serviceData.map((data, i) => (
           <div key={i} className="text-white mt-24 my-8 flex flex-col items-center bg-opacity-0 bg-gradient-to-b from-grassGreen-400 to-grassGreen-100 hover:from-grassGreen-400/75 hover:to-grassGreen-100/25">
-            <div className="flex justify-center mt-[-25%]">{data.icon}</div>
+            <div className="flex justify-center mt-[-15%] md:mt-[-25%]">{data.icon}</div>
             <div className="px-10 pb-10">
               <h2 className="text-3xl">{data.title}</h2>
               <p className="text-lg mt-5">{data.content}</p>
