@@ -1,14 +1,10 @@
 import React from "react";
 import Vector from "../assets/ux_designer.svg";
+import { SectionHeading } from "./micro/sectionHeading";
 const About = () => {
   return (
     <section id="about" className="py-10 bg-darkBlack">
-      <h2 className="text-2xl text-grassGreen-300 text-center font-semibold">
-        About Me
-      </h2>
-      <h2 className="text-xl text-slate-300 text-center font-semibold my-5">
-        UI / UX DESIGNER
-      </h2>
+      <SectionHeading heading={"About Me"} subHeading={"UI / UX DESIGNER"} />
       <div className="md:max-w-[1240px] mx-auto flex flex-col md:flex-row">
         {/* image */}
         <div className="md:w-1/2 flex justify-center items-center">
