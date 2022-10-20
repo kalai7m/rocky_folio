@@ -1,8 +1,8 @@
 import React from "react";
 import { SectionHeading } from "./micro/sectionHeading";
-import img from "../assets/project/sift_app.png"
 
 export const Projects = () => {
+  console.log("process env", process.env.PUBLIC_URL);
   const tabs = [
     {
       _id: "t1",
@@ -25,23 +25,23 @@ export const Projects = () => {
       _id: "t1",
       label: "UI Design",
       title: "Weather App",
-      img_url: "../assets/project/weather_app.png",
+      img_url: "weather_app.png",
       view_link: "#",
     },
     {
       _id: "t1",
       label: "UI Design",
       title: "Sift App",
-      img_url: "../assets/project/sift_app.png",
+      img_url: "sift_app.png",
       view_link: "#",
     },
-    {
-      _id: "t3",
-      label: "Logo Design",
-      title: "Sift App",
-      img_url: "../assets/project/sift_app.png",
-      view_link: "#",
-    },
+    // {
+    //   _id: "t3",
+    //   label: "Logo Design",
+    //   title: "Sift App",
+    //   img_url: "sift_app.png",
+    //   view_link: "#",
+    // },
   ];
   let fetchedUrl = "./weather_app.png";
   return (
@@ -69,29 +69,34 @@ export const Projects = () => {
       </div>
       {/* TABS END*/}
       {/* CONTENT */}
-      <div className="md:max-w-[1240px] mx-auto">
-        {workData.map((tile, i) => (
-          <div>
-            <div>
-              <div
-                id="image"
-                className="bg-[image:var(--bg-small-url)]"
-                style={{
-                  "var(--bg-small-url)": fetchedUrl,
-                }}
-              >
-                <img src={"src/assets/project/sift_app.png"} alt="" />
+      <div className="md:max-w-[1240px] mx-auto mt-8">
+        <div className="flex justify-around">
+          {workData.map((tile, i) => {
+            return (
+              <div className="w-fit bg-slate-300 p-10 rounded-2xl">
+                <div>
+                  <div id="image">
+                    <img
+                      src={require(`../assets/project/${tile.img_url}`)}
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div className="text-white flex items-center justify-between m-5">
+                  <div>
+                    <h3 className="text-2xl text-black font-semibold">
+                      {tile.title}
+                    </h3>
+                    <p className="mt-2 text-lg text-slate-700">{tile.label}</p>
+                  </div>
+                  <button className="font-semibold border border-2 border-grassGreen-300 text-slate-700 px-3 py-2 hover:bg-grassGreen-300 hover:text-white">
+                    View
+                  </button>
+                </div>
               </div>
-            </div>
-            <div>
-              <div>
-                <h3>{tile.title}</h3>
-                <p>{tile.label}</p>
-              </div>
-              <button>View</button>
-            </div>
-          </div>
-        ))}
+            );
+          })}
+        </div>
       </div>
       {/* CONTENT END */}
     </section>
