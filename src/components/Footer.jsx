@@ -1,8 +1,6 @@
 import React from "react";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import { ReactComponent as B1 } from "../assets/b1.svg";
-import { ReactComponent as B2 } from "../assets/b2.svg";
-import { ReactComponent as B3 } from "../assets/b3.svg";
 import Copyright from "../assets/copyright.svg";
 import Like from "../assets/heart.gif";
 import Media from "./micro/media";
