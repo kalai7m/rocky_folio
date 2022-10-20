@@ -3,4 +3,6 @@ export const media = {
   instagram: "abcd",
   linkedin: "as",
   mail: "bharathrocky@gmail.com",
+  behance: "#",
+  dribble: "#",
 };
