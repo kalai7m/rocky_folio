@@ -1,49 +1,137 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { SectionHeading } from "./micro/sectionHeading";
+import { ReactComponent as Left } from "../assets/left.svg";
+import { ReactComponent as Right } from "../assets/right.svg";
+import Card from "./micro/carouselHelper/card";
+import Tab from "./micro/carouselHelper/tab";
+import { PROJECT_DATA, TAB_DATA } from "../constants";
 
 export const Projects = () => {
-  console.log("process env", process.env.PUBLIC_URL);
-  const tabs = [
-    {
-      _id: "t1",
-      label: "UI Design",
-      active: true,
-    },
-    {
-      _id: "t2",
-      label: "UX Design",
-      active: false,
-    },
-    {
-      _id: "t3",
-      label: "Logo Design",
-      active: false,
-    },
-  ];
-  const workData = [
-    {
-      _id: "t1",
-      label: "UI Design",
-      title: "Weather App",
-      img_url: "weather_app.png",
-      view_link: "#",
-    },
-    {
-      _id: "t1",
-      label: "UI Design",
-      title: "Sift App",
-      img_url: "sift_app.png",
-      view_link: "#",
-    },
-    // {
-    //   _id: "t3",
-    //   label: "Logo Design",
-    //   title: "Sift App",
-    //   img_url: "sift_app.png",
-    //   view_link: "#",
-    // },
-  ];
-  let fetchedUrl = "./weather_app.png";
+  const [projectData, setProjectData] = useState(PROJECT_DATA);
+  const [activeData, setActiveData] = useState([]);
+  let [disableRight, setDisableRight] = useState(false);
+  let [disableLeft, setDisableLeft] = useState(true);
+  //constants
+  let tile = 2; //tile to be shown
+  let tileMove = 2; //num of tiles to move
+  let totLen = projectData.length;
+
+  useEffect(() => {
+    console.log(projectData);
+    let temp = projectData.filter((data) => data.isActive === true);
+    setActiveData(temp);
+  }, []);
+
+  //helper function
+  const updateData = (
+    tempActiveData,
+    tempCData,
+    status = false,
+    curFirstIndex,
+    curLastIndex
+  ) => {
+    tempActiveData = [...tempCData.slice(curFirstIndex, curLastIndex + 1)];
+    tempActiveData = tempActiveData.map((item) => {
+      item.isActive = status;
+      return item;
+    });
+    tempCData = [
+      ...tempCData.slice(0, curFirstIndex),
+      ...tempActiveData,
+      ...tempCData.slice(curLastIndex + 1, totLen),
+    ];
+    return { tempActiveData, tempCData };
+  };
+
+  //click handlers
+  let prevClick = () => {
+    if (disableLeft) return;
+    let tempDisableLeft = false;
+    let tempActiveData = [...activeData];
+    let tempProjectData = [...projectData];
+    let curLastIndex = activeData[tile - 1].index;
+    let curFirstIndex = activeData[0].index;
+    let nextFirstIndex = curFirstIndex - tileMove;
+    if (curLastIndex == "show") {
+      let a = tempActiveData.slice().reverse();
+      let index = a.findIndex((item) => typeof item.index == "number");
+      curLastIndex = a[index].index;
+    }
+    //set status of all cards in activeData arr to false
+    let data = updateData(
+      tempActiveData,
+      tempProjectData,
+      false,
+      curFirstIndex,
+      curLastIndex
+    );
+    tempActiveData = data.tempActiveData;
+    tempProjectData = data.tempCData;
+
+    if (nextFirstIndex <= 0) tempDisableLeft = true;
+    curLastIndex = curFirstIndex - 1;
+    curFirstIndex = !tempDisableLeft ? nextFirstIndex : 0;
+
+    data = updateData(
+      tempActiveData,
+      tempProjectData,
+      true,
+      curFirstIndex,
+      curLastIndex
+    );
+    tempActiveData = data.tempActiveData;
+    tempProjectData = data.tempCData;
+
+    setDisableRight(false);
+    setActiveData(tempActiveData);
+    setProjectData(tempProjectData);
+    setDisableLeft(tempDisableLeft);
+  };
+
+  const nextClick = () => {
+    if (disableRight) return; //state
+    let tempDisableRight = false;
+    let tempActiveData = [...activeData];
+    let tempProjectData = [...projectData];
+    let curLastIndex = activeData[tile - 1].index;
+    let curFirstIndex = activeData[0].index;
+    let nextLastIndex = curLastIndex + tileMove;
+    //set status of all cards in activeData arr to false
+    let data = updateData(
+      tempActiveData,
+      tempProjectData,
+      false,
+      curFirstIndex,
+      curLastIndex
+    );
+    tempActiveData = data.tempActiveData;
+    tempProjectData = data.tempCData;
+
+    if (nextLastIndex >= totLen - 1) tempDisableRight = true;
+    curLastIndex = !tempDisableRight ? nextLastIndex : totLen - 1;
+    curFirstIndex = curFirstIndex + tileMove;
+
+    data = updateData(
+      tempActiveData,
+      tempProjectData,
+      false,
+      curFirstIndex,
+      curLastIndex
+    );
+    tempActiveData = data.tempActiveData;
+    tempProjectData = data.tempCData;
+
+    if (tempActiveData.length < tile) {
+      let count = tile - tempActiveData.length;
+      for (let i = 0; i < count; i++) {
+        tempActiveData.push({ index: "show", isActive: true });
+      }
+    }
+    setDisableLeft(false);
+    setActiveData(tempActiveData);
+    setProjectData(tempProjectData);
+    setDisableRight(tempDisableRight);
+  };
   return (
     <section id="projects" className="pt-8 pb-14 bg-darkBlack">
       <SectionHeading
@@ -54,48 +142,38 @@ export const Projects = () => {
       {/* TABS */}
       <div className="flex justify-center items-center">
         <ul className="flex  space-x-8 text-lg">
-          {tabs.map((tab, i) => (
-            <li key={i} className="">
-              <button
-                className={`${
-                  tab.active ? "underline text-grassGreen-300" : "text-white"
-                } hover:underline underline-offset-4 decoration-white font-semibold`}
-              >
-                {tab.label}
-              </button>
-            </li>
+          {TAB_DATA.map((tab, i) => (
+            <Tab key={i} {...tab} />
           ))}
         </ul>
       </div>
       {/* TABS END*/}
       {/* CONTENT */}
-      <div className="md:max-w-[1240px] mx-auto mt-8">
-        <div className="flex justify-around">
-          {workData.map((tile, i) => {
-            return (
-              <div className="w-fit bg-slate-300 p-10 rounded-2xl">
-                <div>
-                  <div id="image">
-                    <img
-                      src={require(`../assets/project/${tile.img_url}`)}
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div className="text-white flex items-center justify-between m-5">
-                  <div>
-                    <h3 className="text-2xl text-black font-semibold">
-                      {tile.title}
-                    </h3>
-                    <p className="mt-2 text-lg text-slate-700">{tile.label}</p>
-                  </div>
-                  <button className="font-semibold border border-2 border-grassGreen-300 text-slate-700 px-3 py-2 hover:bg-grassGreen-300 hover:text-white">
-                    View
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+      <div className="mt-10 relative">
+        <div className="flex justify-between absolute top left w-full h-full 3xl:px-16">
+          <button
+            onClick={() => prevClick()}
+            disabled={disableLeft}
+            className="hover:bg-slate-800/75 text-white w-16 h-full text-center opacity-70 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+          >
+            <Left className="h-16 inline-block" fill="#2BDA80" />
+            <span className="sr-only">Prev</span>
+          </button>
+          <button
+            onClick={() => nextClick()}
+            disabled={disableRight}
+            className="hover:bg-slate-800/75 text-white w-16 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+          >
+            <Right className="h-16 inline-block" fill="#2BDA80" />
+            <span className="sr-only">Next</span>
+          </button>
+        </div>
+        <div className="relative overflow-hidden md:max-w-[1280px] mx-auto">
+          <div className="flex justify-around mx-20 scroll-smooth snap-x snap-mandatory touch-pan-x z-0">
+            {activeData.map((tile, i) => {
+              return <Card {...tile} />;
+            })}
+          </div>
         </div>
       </div>
       {/* CONTENT END */}
