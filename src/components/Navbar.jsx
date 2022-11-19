@@ -34,7 +34,13 @@ const Navbar = () => {
         <div>
           <Logo className="h-12 sm:h-16" />
         </div>
-        <div className="lg:hidden" onClick={() => {setShowOverlay(true); document.body.style.overflow = 'hidden';}}>
+        <div
+          className="lg:hidden"
+          onClick={() => {
+            setShowOverlay(true);
+            document.body.style.overflow = "hidden";
+          }}
+        >
           <Bars height={25} />
         </div>
         {/* OVERLAY */}
@@ -44,7 +50,13 @@ const Navbar = () => {
               <div>
                 <Logo className="h-12 sm:h-16" />
               </div>
-              <div className="lg:hidden" onClick={() => {setShowOverlay(false); document.body.style.overflow = 'unset';}}>
+              <div
+                className="lg:hidden"
+                onClick={() => {
+                  setShowOverlay(false);
+                  document.body.style.overflow = "unset";
+                }}
+              >
                 <Bars height={25} />
               </div>
             </div>
@@ -55,7 +67,7 @@ const Navbar = () => {
                   <li
                     key={i}
                     name={label}
-                    className={`px-3 text-2xl w-full text-center hover:text-grassGreen-300 py-4 ${
+                    className={`px-3 text-lg sm:text-2xl w-full text-center hover:text-grassGreen-300 py-4 ${
                       activeLabel === label
                         ? "text-grassGreen-300"
                         : "text-slate-50"
@@ -70,7 +82,7 @@ const Navbar = () => {
                 ))}
               </ul>
               <div className="px-2">
-                <button className="text-white text-2xl bg-gradient-to-b from-grassGreen-200 to-grassGreen-100 px-4 py-2 rounded">
+                <button className="text-white text-lg sm:text-2xl bg-gradient-to-b from-grassGreen-200 to-grassGreen-100 px-4 py-2 rounded">
                   Resume
                 </button>
               </div>
