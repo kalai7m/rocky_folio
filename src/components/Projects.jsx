@@ -14,17 +14,32 @@ export const Projects = () => {
   );
   const [activeTab, setActiveTab] = useState("uidesign");
   const [activeData, setActiveData] = useState(getActiveData(projectData));
-  const [showNav, setShowNav] = useState(projectData.length >= tileCount);
+  const [showNav, setShowNav] = useState(projectData.length > tileCount);
 
   useEffect(() => {
     setProjectData(getProjectDataOnTabClick(tileCount, activeTab));
     setActiveData(getActiveData(projectData));
-    setShowNav(projectData.length >= tileCount);
+    setShowNav(projectData.length > tileCount);
   }, [activeTab, projectData]);
 
   const handleTabClick = (e) => {
     setActiveTab(e.target.name);
   };
+
+  const handleNext = () => {
+    let nextIndex = activeData[0].index + tileCount;
+    setProjectData(getProjectDataOnTabClick(tileCount, activeTab, nextIndex));
+    setActiveData(getActiveData(projectData));
+    setShowNav(projectData.length > tileCount);
+  };
+
+  const handlePrev = () => {
+    let prevIndex = activeData[0].index - tileCount;
+    setProjectData(getProjectDataOnTabClick(tileCount, activeTab, prevIndex));
+    setActiveData(getActiveData(projectData));
+    setShowNav(projectData.length > tileCount);
+  };
+
   return (
     <section id="projects" className="pt-8 pb-14 bg-darkBlack">
       <SectionHeading
@@ -34,7 +49,7 @@ export const Projects = () => {
       />
       {/* TABS */}
       <div className="flex justify-center items-center">
-        <ul className="flex  space-x-8 text-lg">
+        <ul className="flex  space-x-4 text-md sm:text-lg sm:space-x-8">
           {TAB_DATA.map((tab, i) => (
             <Tab
               key={i}
@@ -52,6 +67,8 @@ export const Projects = () => {
         sliderData={projectData}
         slidesPerView={tileCount}
         activeData={activeData}
+        onNextClick={handleNext}
+        onPrevClick={handlePrev}
       />
       {/* CONTENT END */}
     </section>
