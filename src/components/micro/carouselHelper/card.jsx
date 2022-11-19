@@ -7,7 +7,7 @@ const Card = (props) => {
   ) : (
     <div className="lg:w-[45%] 3xl:w-fit bg-slate-300 p-5 sm:p-10 rounded-2xl">
       <div>
-        <div id="image" className="w-40 sm:w-fit">
+        <div id="image" className="w-40 md:w-fit">
           <img src={require(`../../../assets/project/${img_url}`)} alt="" />
         </div>
       </div>
