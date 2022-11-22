@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
+  const contactForm = useRef();
   const [form, setForm] = useState({ fullName: "", email: "", message: "" });
   const [error, setError] = useState({});
   let handleOnChange = (e) => {
@@ -31,13 +33,35 @@ const ContactForm = () => {
       }
     });
     setError(tempError);
+    return true;
   };
   let handleOnSubmit = (e) => {
     e.preventDefault();
-    validate();
+    // validate();
+    if (validate()) {
+      if (Object.keys(error).length === 0) {
+        console.log("Submitted");
+        emailjs
+          .sendForm(
+            "gmail_service_rocky",
+            "gmail_template_rocky",
+            contactForm.current,
+            "5O2-zlYXfF6-pm5wt"
+          )
+          .then(
+            (result) => {
+              console.log(result.text);
+            },
+            (error) => {
+              console.log(error.text);
+            }
+          );
+        contactForm.current.reset();
+      }
+    }
   };
   return (
-    <form className="py-10 lg:pr-10 flex flex-col space-y-5">
+    <form ref={contactForm} className="py-10 lg:pr-10 flex flex-col space-y-5">
       {/* NAME */}
       <div className="flex flex-col space-y-3">
         <label htmlFor="fullName" className="text-md font-semibold">
