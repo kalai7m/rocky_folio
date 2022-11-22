@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import { ReactComponent as Bars } from "../assets/bars.svg";
+import { ReactComponent as Close } from "../assets/close.svg";
 
 const Navbar = () => {
   const [activeLabel, setActiveLabel] = useState("Home");
@@ -57,7 +58,7 @@ const Navbar = () => {
                   document.body.style.overflow = "unset";
                 }}
               >
-                <Bars height={25} />
+                <Close height={25} />
               </div>
             </div>
             {/* overlay links */}
