@@ -7,10 +7,18 @@ const About = () => {
       <SectionHeading heading={"About Me"} subHeading={"UI / UX DESIGNER"} />
       <div className="md:max-w-[1240px] mx-auto flex flex-col md:flex-row">
         {/* image */}
-        <div className="md:w-1/2 flex justify-center items-center">
+        <div
+          className="md:w-1/2 flex justify-center items-center"
+          data-aos="fade-right"
+          data-aos-duration="1000"
+        >
           <img src={Vector} alt="Me" className="h-64 sm:h-80 lg:h-96" />
         </div>
-        <div className="md:w-1/2 flex flex-col space-y-6 justify-center items-center p-6">
+        <div
+          className="md:w-1/2 flex flex-col space-y-6 justify-center items-center p-6"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
           <p className="text-md sm:text-lg text-white">
             &nbsp;&nbsp;&nbsp;&nbsp;I am an enthusiastic User Experience
             Designer, who specializes in producing user-centric interfaces for

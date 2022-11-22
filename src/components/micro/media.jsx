@@ -10,7 +10,7 @@ import { media } from "../../constants";
 const Media = () => {
   const mediaLink = [
     {
-      icon: <Fb className="h-7 w-7 sm:h-9 sm:w-9"/>,
+      icon: <Fb className="h-7 w-7 sm:h-9 sm:w-9" />,
       link: media.facebook,
       label: "Facebook",
     },
@@ -43,7 +43,7 @@ const Media = () => {
   return (
     <ul className="flex items-center space-x-4">
       {mediaLink.map(({ icon, link }, index) => (
-        <li key={index}>
+        <li key={index} data-aos="flip-left">
           <a href={link}>{icon}</a>
         </li>
       ))}

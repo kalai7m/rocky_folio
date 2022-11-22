@@ -23,7 +23,11 @@ const Carousel = () => {
             <span>UI & UX </span>
             <span className="text-grassGreen-300">Designer.</span>
           </h1>
-          <p className="text-md sm:text-lg">
+          <p
+            className="text-md sm:text-lg"
+            data-aos="fade-up"
+            data-aos-duration="2000"
+          >
             Hi, I'm Bharath Rocky, a passionate UI/UX Designer based in India
             with over 2 years of experience in creating bold & brave interface
             design for companies all across the world.
@@ -40,6 +44,7 @@ const Carousel = () => {
             <img
               src={Profile}
               alt="Rocky's Profile"
+              data-aos="zoom-out-down"
               className="h-60 shadow-lg shadow-neutral-500 sm:h-72 relative z-10"
             />
             <img
