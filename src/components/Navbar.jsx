@@ -29,6 +29,20 @@ const Navbar = () => {
       to: "#",
     },
   ];
+  const onDownload = () => {
+    // using Java Script method to get PDF file
+    fetch("rocky_resume.pdf").then((response) => {
+      response.blob().then((blob) => {
+        // Creating new object of PDF file
+        const fileURL = window.URL.createObjectURL(blob);
+        // Setting various property values
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "rocky_resume.pdf";
+        alink.click();
+      });
+    });
+  };
   return (
     <div className="bg-darkBlack py-5 px-5 sm:px-10">
       <div className="flex items-center md:max-w-[1240px] mx-auto justify-between">
@@ -117,7 +131,10 @@ const Navbar = () => {
             </li>
           ))}
           <li className="px-2">
-            <button className="text-white bg-gradient-to-b from-grassGreen-200 to-grassGreen-100 px-4 py-2 rounded">
+            <button
+              onClick={() => onDownload()}
+              className="text-white bg-gradient-to-b from-grassGreen-200 to-grassGreen-100 px-4 py-2 rounded"
+            >
               Resume
             </button>
           </li>
