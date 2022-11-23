@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rocky_folio/static/css/main.b731a23b.css",
-    "main.js": "/rocky_folio/static/js/main.b1a41d04.js",
+    "main.js": "/rocky_folio/static/js/main.cb84980a.js",
     "static/media/profile.svg": "/rocky_folio/static/media/profile.882796cc8a36dc7419cbe28586e22b68.svg",
     "static/media/heart.gif": "/rocky_folio/static/media/heart.8a2575c068ddb6b0d39e.gif",
     "static/media/weather_app.png": "/rocky_folio/static/media/weather_app.2c62f0d14dc8eadf9bc6.png",
@@ -31,10 +31,10 @@
     "static/media/left.svg": "/rocky_folio/static/media/left.39240524ac28f9392e65981e6c58b96a.svg",
     "static/media/right.svg": "/rocky_folio/static/media/right.ab7e819e37147ba5389b714c12fcc8b9.svg",
     "main.b731a23b.css.map": "/rocky_folio/static/css/main.b731a23b.css.map",
-    "main.b1a41d04.js.map": "/rocky_folio/static/js/main.b1a41d04.js.map"
+    "main.cb84980a.js.map": "/rocky_folio/static/js/main.cb84980a.js.map"
   },
   "entrypoints": [
     "static/css/main.b731a23b.css",
-    "static/js/main.b1a41d04.js"
+    "static/js/main.cb84980a.js"
   ]
 }
