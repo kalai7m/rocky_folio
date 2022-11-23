@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/rocky_folio/static/css/main.b731a23b.css",
+    "main.js": "/rocky_folio/static/js/main.b1a41d04.js",
+    "static/media/profile.svg": "/rocky_folio/static/media/profile.882796cc8a36dc7419cbe28586e22b68.svg",
+    "static/media/heart.gif": "/rocky_folio/static/media/heart.8a2575c068ddb6b0d39e.gif",
+    "static/media/weather_app.png": "/rocky_folio/static/media/weather_app.2c62f0d14dc8eadf9bc6.png",
+    "static/media/uiux.svg": "/rocky_folio/static/media/uiux.942321b093bc05f84d59a818e331c7e1.svg",
+    "static/media/sift_app.png": "/rocky_folio/static/media/sift_app.769fd35a614ad329ec1d.png",
+    "static/media/vd.svg": "/rocky_folio/static/media/vd.3908b04020f42abac81e8fe71d74a46f.svg",
+    "static/media/logo.svg": "/rocky_folio/static/media/logo.28ec1d99dc23a623c4c58c815935b6cc.svg",
+    "static/media/ux_designer.svg": "/rocky_folio/static/media/ux_designer.796f79d0f376f981698a82a223fa217d.svg",
+    "static/media/contact.svg": "/rocky_folio/static/media/contact.f9096f4795745053005143773a2470bb.svg",
+    "static/media/analytic.svg": "/rocky_folio/static/media/analytic.22355f06d6f3f613a012677d13364afa.svg",
+    "static/media/b1.svg": "/rocky_folio/static/media/b1.d8dff922b3c5fe66dcd1d611004740da.svg",
+    "static/media/bars.svg": "/rocky_folio/static/media/bars.872e2eb5433c809b4f4302e7575ccc97.svg",
+    "static/media/dribble.svg": "/rocky_folio/static/media/dribble.5a65ba6bcd0e0ba69dc2e59b2610e02d.svg",
+    "static/media/behance.svg": "/rocky_folio/static/media/behance.5b01be978d4e27171cc2d81ea1c04662.svg",
+    "static/media/copyright.svg": "/rocky_folio/static/media/copyright.097b963d54979f07558e66d02f7d82fe.svg",
+    "static/media/instagram.svg": "/rocky_folio/static/media/instagram.e6ce2e5f25af9a45b8252a2b8c298c7c.svg",
+    "static/media/mail.svg": "/rocky_folio/static/media/mail.d9aecda9f91a1913e433585b208b7952.svg",
+    "static/media/linkedin.svg": "/rocky_folio/static/media/linkedin.04ab0d60b9ec4c19299c051bf4f37375.svg",
+    "index.html": "/rocky_folio/index.html",
+    "static/media/facebook.svg": "/rocky_folio/static/media/facebook.eecb07f0167ce0f278c7cb4d562be04d.svg",
+    "static/media/poly_left.svg": "/rocky_folio/static/media/poly_left.d0482ecafd38437e080d93b88b808339.svg",
+    "static/media/poly_right.svg": "/rocky_folio/static/media/poly_right.46dd6e6008f6a3154957e120be3f4686.svg",
+    "static/media/close.svg": "/rocky_folio/static/media/close.8d52229d5267bdafbeac4450813973d2.svg",
+    "static/media/ellipse-outline.svg": "/rocky_folio/static/media/ellipse-outline.2804e813369b282bedbb1e97edbce027.svg",
+    "static/media/rect.svg": "/rocky_folio/static/media/rect.0dc5de150b2a34fcb22a2327549b02c7.svg",
+    "static/media/ellipse-fill.svg": "/rocky_folio/static/media/ellipse-fill.b7048636166eb01ed47343d613ccf6d0.svg",
+    "static/media/left.svg": "/rocky_folio/static/media/left.39240524ac28f9392e65981e6c58b96a.svg",
+    "static/media/right.svg": "/rocky_folio/static/media/right.ab7e819e37147ba5389b714c12fcc8b9.svg",
+    "main.b731a23b.css.map": "/rocky_folio/static/css/main.b731a23b.css.map",
+    "main.b1a41d04.js.map": "/rocky_folio/static/js/main.b1a41d04.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b731a23b.css",
+    "static/js/main.b1a41d04.js"
+  ]
+}
