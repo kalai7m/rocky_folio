@@ -71,7 +71,7 @@ const ContactForm = () => {
           type="text"
           name="fullName"
           id="fullName"
-          placeholder="Ganesh Kumar"
+          placeholder="Bharath Rocky"
           onChange={(e) => handleOnChange(e)}
           value={form.fullName}
           className="w-full bg-slate-900 text-grassGreen-300 focus:outline-none p-2 placeholder:italic placeholder:text-slate-500"
