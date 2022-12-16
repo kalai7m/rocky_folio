@@ -1,10 +1,10 @@
 export const media = {
-  facebook: "abcd",
-  instagram: "abcd",
-  linkedin: "as",
+  facebook: "",
+  instagram: "https://instagram.com/rocky_ui_ux?igshid=YmMyMTA2M2Y=",
+  linkedin: "https://www.linkedin.com/in/bharathraj-balan/",
   mail: "bharathrocky@gmail.com",
-  behance: "#",
-  dribble: "#",
+  behance: "https://www.behance.net/bharathrocky",
+  dribble: "https://dribbble.com/BharathRocky",
 };
 
 export const TAB_DATA = [

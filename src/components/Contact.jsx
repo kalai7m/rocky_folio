@@ -5,7 +5,7 @@ import ContactForm from "./micro/contactForm";
 
 const Contact = () => {
   return (
-    <section id="footer" className="bg-darkBlack py-8 px-8">
+    <section id="contact" className="bg-darkBlack py-8 px-8">
       <SectionHeading
         heading={"Contact Me"}
         subHeading={"I AM HERE FOR YOU"}

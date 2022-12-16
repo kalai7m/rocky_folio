@@ -10,23 +10,23 @@ const Navbar = () => {
   const links = [
     {
       label: "Home",
-      to: "#",
+      to: "#carousel",
     },
     {
       label: "About",
-      to: "#",
+      to: "#about",
     },
     {
       label: "Services",
-      to: "#",
+      to: "#service",
     },
     {
       label: "Projects",
-      to: "#",
+      to: "#projects",
     },
     {
       label: "Contact",
-      to: "#",
+      to: "#contact",
     },
   ];
   const onDownload = () => {
@@ -44,7 +44,7 @@ const Navbar = () => {
     });
   };
   return (
-    <div className="bg-darkBlack py-5 px-5 sm:px-10">
+    <div className="bg-darkBlack py-5 px-5 sm:px-10 sticky top-0 z-50 drop-shadow-xl">
       <div className="flex items-center md:max-w-[1240px] mx-auto justify-between">
         <div>
           <Logo className="h-12 sm:h-16" />
