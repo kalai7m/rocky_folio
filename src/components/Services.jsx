@@ -29,17 +29,17 @@ export const Services = () => {
     },
   ];
   return (
-    <section id="service" className="py-14 bg-darkBlack">
+    <section id="service" className="pt-14 pb-4 md:pb-14 bg-darkBlack">
       <SectionHeading
         heading={"Services"}
         subHeading={"WHAT I CAN DO TO HELP BUILD YOUR PROJECT"}
-        cls={"pb-8"}
+        cls={"md:pb-8"}
       />
       <div className="md:max-w-[1240px] 2xl:mx-auto grid grid-rows-3 md:grid-cols-2 md:grid-rows-1 2xl:grid-cols-3 gap-0 md:gap-8 relative mx-6">
         {serviceData.map((data, i) => (
           <div
             key={i}
-            className="text-white mt-24 my-8 flex flex-col items-center bg-opacity-0 bg-gradient-to-b from-grassGreen-400 to-grassGreen-100 hover:from-grassGreen-400/75 hover:to-grassGreen-100/25"
+            className="text-white mt-16 md:mt-24 my-8 flex flex-col items-center bg-opacity-0 bg-gradient-to-b from-grassGreen-400 to-grassGreen-100 hover:from-grassGreen-400/75 hover:to-grassGreen-100/25"
             data-aos={data.animate}
             data-aos-duration="1000"
           >
