@@ -2,7 +2,7 @@ export const PROJECT_DATA = {
   uidesign: [
     {
       _id: 0,
-      label: "UI Design", //edit
+      label: "UI Design", //edit here
       title: "Weather App",
       img_url: "weather_app.png",
       view_link: "#",
